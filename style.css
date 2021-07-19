@@ -1,0 +1,353 @@
+/* Custom properties and variables  */
+:root {
+  --custom-white: #f0f0f0;
+  --custom-gray: #999;
+  --custom-blue: #45567d;
+  --custom-black: #000;
+  --custom-orange: #ff7f50;
+}
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 4.2rem;
+}
+h1,
+h2 {
+  font-family: monospace, sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--custom-white);
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1.5vw;
+}
+
+@media (max-width: 700px) {
+  ::-webkit-scrollbar {
+    width: 2.5vw;
+  }
+}
+@media (max-width: 400px) {
+  ::-webkit-scrollbar {
+    width: 4.5vw;
+  }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--custom-white);
+  border-radius: 10px;
+  transition: color 2.2s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
+
+/* Navigation */
+
+#navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--custom-black);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+#navbar > ul {
+  display: flex;
+  margin-right: 2rem;
+}
+.nav-list a {
+  font-size: 2.2rem;
+  display: block;
+  padding: 2rem;
+  transition: background-color 0.8s ease;
+}
+.nav-list a:hover {
+  background-color: var(--custom-blue);
+}
+/* Welcome section */
+
+#welcome-section {
+  color: var(--custom-white);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.ibb.co/k9B2y0q/fabian-bachli-D8fq-A-MUWHo-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#welcome-section > h1 {
+  text-shadow: 0 0 2px var(--custom-white);
+}
+
+#welcome-section > p {
+  color: var(--custom-black);
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  box-shadow: 2px 2px 4px var(--custom-gray);
+  padding: 0.5em;
+}
+
+#welcome-section > p:not(#smile) {
+  text-shadow: 0 0 0 white;
+}
+
+#welcome-section > p#smile {
+  color: var(--custom-white);
+  font-weight: italic;
+  transform: rotate(85deg);
+  animation-name: smiley;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+}
+
+@keyframes smiley {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 60.75rem) {
+  #welcome-section {
+    background-image: radial-gradient(white, transparent, black, var(--custom-gray), transparent),
+      url(https://i.ibb.co/k9B2y0q/fabian-bachli-D8fq-A-MUWHo-unsplash.jpg);
+  }
+}
+
+@media (min-width: 60.75rem) and (max-width: 84.75rem) {
+  #welcome-section {
+    background-image: radial-gradient(white, black 45%, transparent 45%, transparent),
+      url(https://i.ibb.co/k9B2y0q/fabian-bachli-D8fq-A-MUWHo-unsplash.jpg);
+  }
+}
+
+/* Projects section */
+
+#project-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--custom-white);
+}
+
+#project-section-header {
+  color: var(--custom-black);
+  max-width: 740px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--custom-black);
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  background: var(--custom-black);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.code {
+  color: var(--custom-gray);
+  transition: color 0.3s ease-out;
+}
+.project:hover .code {
+  color: var(--custom-orange);
+}
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.project:hover .project-image {
+  transform: translateY(-8px);
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: var(--custom-black);
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover i {
+  color: var(--custom-orange);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(2px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background-image: linear-gradient(transparent, transparent, #000),
+    url('https://i.ibb.co/LNCwfTz/imattsmart-kig-HD-r-VJz-A-unsplash.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+  color: var(--custom-blue);
+}
+
+.contact-section-header > p {
+  color: var(--custom-blue);
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px var(--custom-blue);
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+/* Footer */
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  color: #82899a;
+  background: #000;
+  border-top: 4px solid var(--custom-black);
+}
+
+footer > p {
+  margin: 2rem;
+}
+
+footer i {
+  vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
