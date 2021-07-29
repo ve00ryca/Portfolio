@@ -1,4 +1,5 @@
 /* Custom properties and variables  */
+
 :root {
   --custom-white: #f0f0f0;
   --custom-gray: #999;
@@ -6,7 +7,9 @@
   --custom-blue-light: #75d0e3;
   --custom-black: #000;
 }
+
 /* Basic reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +17,7 @@
 }
 
 /* Base styles */
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -21,14 +25,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.4;
 }
-
 h1 {
   font-size: 6rem;
 }
@@ -41,11 +43,9 @@ h2 {
   font-weight: 700;
   text-align: center;
 }
-
 ul {
   list-style: none;
 }
-
 a {
   text-decoration: none;
   color: var(--custom-white);
@@ -54,11 +54,9 @@ img {
   display: block;
   width: 100%;
 }
-
 ::-webkit-scrollbar {
   width: 1.5vw;
 }
-
 @media (max-width: 700px) {
   ::-webkit-scrollbar {
     width: 2.5vw;
@@ -69,29 +67,26 @@ img {
     width: 4.5vw;
   }
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background-color: #000;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(var(--custom-blue-light), var(--custom-blue));
-  background: -ms-linear-gradient(var(--custom-blue-light), var(--custom-blue));
   background: -webkit-linear-gradient(var(--custom-blue-light), var(--custom-blue));
   border-radius: 10px;
   transition: color 2.2s ease;
+  -webkit-transition: color 2.2s ease;
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(var(--custom-blue), var(--custom-blue-light));
-  background: -ms-linear-gradient(var(--custom-blue), var(--custom-blue-light));
   background: -webkit-linear-gradient(var(--custom-blue), var(--custom-blue-light));
 }
 
 /* Navigation */
+
 #navbar {
   width: 100%;
   display: flex;
@@ -113,11 +108,29 @@ img {
   display: block;
   padding: 2rem;
   transition: background-color 0.8s ease;
+  -webkit-transition: background-color 0.8s ease;
+  -moz-transition: background-color 0.8s ease;
+  -ms-transition: background-color 0.8s ease;
+  -o-transition: background-color 0.8s ease;
 }
 .nav-list a:hover {
   background-color: var(--custom-blue);
 }
+@media (max-width: 319px) {
+  #navbar > ul {
+    margin-right: 0;
+  }
+  .nav-list a {
+    padding: 0;
+    padding-right: 0.7rem;
+  }
+  .project-title {
+    font-size: 1.7rem !important;
+  }
+}
+
 /* Welcome section */
+
 #welcome-section::before {
   content: '';
   width: 100%;
@@ -215,23 +228,23 @@ img {
 #welcome-section > h1 > span:nth-child(5) {
   animation-delay: 3.5s;
 }
-#welcome-section > h1 > span:nth-child(6) {
+#welcome-section > h1 > span:nth-child(7) {
   animation-delay: 3.75s;
 }
-#welcome-section > h1 > span:nth-child(7) {
+#welcome-section > h1 > span:nth-child(8) {
   animation-delay: 4s;
 }
-#welcome-section > h1 > span:nth-child(8) {
+#welcome-section > h1 > span:nth-child(10) {
   animation-delay: 4.5s;
 }
-#welcome-section > h1 > span:nth-child(9) {
+#welcome-section > h1 > span:nth-child(11) {
   animation-delay: 4.75s;
 }
-#welcome-section > h1 > span:nth-child(10) {
-  animation-delay: 5s;
+#welcome-section > h1 > span:nth-child(12) {
+  animation-delay: 5s !important;
 }
-#welcome-section > h1 > span:nth-child(11) {
-  animation-delay: 5.5s;
+#welcome-section > h1 > span:nth-child(13) {
+  animation-delay: 5.5s !important;
 }
 #welcome-section > p {
   color: var(--custom-blue);
@@ -260,11 +273,11 @@ img {
     box-shadow: 2px 2px 131px var(--custom-blue);
   }
 }
-
-#welcome-section > p:not(#smile) {
-  /* text-shadow: 0 0 0 white; */
+@media (max-width: 375px) {
+  #welcome-section > p:not(#smile) {
+    text-shadow: 0 0 0 var(--custom-blue-light);
+  }
 }
-
 #welcome-section > p#smile {
   color: var(--custom-blue);
   font-weight: italic;
@@ -274,7 +287,6 @@ img {
   animation-duration: 1.5s;
   text-shadow: 0 0 1px var(--custom-blue);
 }
-
 @keyframes smiley {
   0% {
     opacity: 0;
@@ -307,19 +319,20 @@ img {
     opacity: 0.8;
   }
 }
-/* @media (max-width: 60.75rem) {
-  #welcome-section {
-    background-image: radial-gradient(white, transparent, black, var(--custom-gray), transparent),
-      url(https://i.ibb.co/k9B2y0q/fabian-bachli-D8fq-A-MUWHo-unsplash.jpg);
+#first-break,
+#second-break {
+  display: none;
+}
+@media (max-width: 494px) {
+  #second-break {
+    display: block !important;
   }
 }
-
-@media (min-width: 60.75rem) and (max-width: 84.75rem) {
-  #welcome-section {
-    background-image: radial-gradient(white, black 45%, transparent 45%, transparent),
-      url(https://i.ibb.co/k9B2y0q/fabian-bachli-D8fq-A-MUWHo-unsplash.jpg);
+@media (min-width: 287px) and (max-width: 323px) {
+  #first-break {
+    display: block !important;
   }
-} */
+}
 
 /* Projects section */
 
@@ -328,21 +341,19 @@ img {
   padding: 10rem 2rem;
   background: var(--custom-white);
 }
-
 #project-section-header {
   color: var(--custom-black);
   max-width: 740px;
   margin: 0 auto 6rem auto;
   border-bottom: 0.2rem solid var(--custom-black);
 }
-
 @media (max-width: 28.75em) {
   .projects-section-header {
     font-size: 4rem;
   }
 }
 
-/* "Automagic" image grid using no media queries */
+/* Image grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -352,26 +363,26 @@ img {
   margin: 0 auto;
   margin-bottom: 6rem;
 }
-
 @media (max-width: 30.625em) {
   .projects-section {
     padding: 6rem 1rem;
   }
-
   .projects-grid {
     grid-template-columns: 1fr;
   }
 }
-
 .project {
   background: var(--custom-black);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
 }
-
 .code {
   color: var(--custom-gray);
   transition: color 0.3s ease-out;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
 }
 .project:hover .code {
   color: var(--custom-blue-light);
@@ -381,41 +392,46 @@ img {
   width: 100%;
   object-fit: cover;
   transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
 }
-
 .project:hover .project-image {
   transform: translateY(-8px);
 }
-
 .project-title {
   font-size: 2rem;
   padding: 2rem 0.5rem;
 }
-
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
   border-radius: 2px;
 }
-
 .btn-show-all {
   font-size: 2rem;
   background: var(--custom-black);
-  transition: background 0.3s ease-out;
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -ms-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
 }
-
 .btn-show-all:hover i {
   color: var(--custom-blue-light);
 }
-
 .btn-show-all:hover > i {
   transform: translateX(2px);
 }
-
 .btn-show-all > i {
   margin-left: 10px;
   transform: translateX(0);
   transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
 }
 
 /* Contact section */
@@ -434,26 +450,21 @@ img {
   background-attachment: fixed;
   background-size: cover;
 }
-
 .contact-section-header > h2 {
   font-size: 6rem;
   color: var(--custom-blue);
 }
-
 .contact-section-header > p {
   color: var(--custom-blue);
 }
-
 @media (max-width: 28.75em) {
   .contact-section-header > h2 {
     font-size: 4rem;
   }
 }
-
 .contact-section-header > p {
   font-style: italic;
 }
-
 .contact-links {
   display: flex;
   justify-content: center;
@@ -462,13 +473,15 @@ img {
   margin-top: 4rem;
   flex-wrap: wrap;
 }
-
 .contact-details {
   font-size: 2.4rem;
   text-shadow: 2px 2px 1px var(--custom-blue);
   transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
 }
-
 .contact-details:hover {
   transform: translateY(8px);
 }
@@ -484,19 +497,15 @@ footer {
   background: #000;
   border-top: 4px solid var(--custom-black);
 }
-
 footer > p {
   margin: 2rem;
 }
-
 footer i {
   vertical-align: middle;
 }
-
 footer a {
   color: var(--custom-blue-light);
 }
-
 @media (max-width: 28.75em) {
   footer {
     flex-direction: column;
