@@ -280,7 +280,6 @@ img {
 }
 #welcome-section > p#smile {
   color: var(--custom-blue);
-  font-weight: italic;
   transform: rotate(85deg);
   animation-name: smiley;
   animation-delay: 5.75s;
