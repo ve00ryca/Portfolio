@@ -140,7 +140,7 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(alexander-sinn-KgLtFCgfC28-unsplash.jpg);
+  background: url(images/alexander-sinn-KgLtFCgfC28-unsplash.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: right;
@@ -444,8 +444,7 @@ img {
   width: 100%;
   height: 80vh;
   padding: 0 2rem;
-  background-image: linear-gradient(transparent, transparent, #000),
-    url('https://i.ibb.co/LNCwfTz/imattsmart-kig-HD-r-VJz-A-unsplash.jpg');
+  background-image: linear-gradient(transparent, transparent, #000), url('images/keyboard.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
