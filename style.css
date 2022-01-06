@@ -334,12 +334,34 @@ img {
 }
 
 /* Projects section */
-
+#project-section::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: url(images/alexander-sinn-KgLtFCgfC28-unsplash.jpg) #c1e4eb; */
+  background: url(images/alexander-sinn-KgLtFCgfC28-unsplash.jpg) rgba(193, 228, 235, 0.1);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: right;
+  background-blend-mode: luminosity !important;
+  z-index: -1;
+  /* opacity: 0; */
+  background-color: whitesmoke;
+}
 #project-section {
   text-align: center;
   padding: 10rem 2rem;
-  background: var(--custom-white);
+  /* background: var(--custom-white); */
+
+  position: relative;
+  background-color: rgba(240, 240, 240, 0.9);
 }
+
 #project-section-header {
   color: var(--custom-black);
   max-width: 740px;
