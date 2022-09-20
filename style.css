@@ -66,6 +66,9 @@ img {
   ::-webkit-scrollbar {
     width: 4.5vw;
   }
+  #project-title-converter {
+    padding-top: 1rem;
+  }
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -422,7 +425,7 @@ img {
   transform: translateY(-8px);
 }
 .project-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 2rem 0.5rem;
 }
 .btn {
